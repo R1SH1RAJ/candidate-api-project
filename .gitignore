@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtualenvs
+venv/
+App/venv/
+*/venv/
+.env
+.env.* 
+.env.local
+
+# DB / data files
+*.sqlite3
+*.db
+*.db-journal
+resumes/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# PyCharm
+*.iml
+
+# byte-compiled / caches
+pip-wheel-metadata/

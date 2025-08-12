@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Candidate Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">CM</div>
+        <div class="brand-info">
+          <div class="title">Candidate Manager</div>
+          <div class="subtitle">Manage candidates, jobs & applications</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Dashboard</a>
+        <a href="candidates.html" class="active">Candidates</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="applications.html">Applications</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <!-- left: main content -->
+      <section class="card">
+        <h2 style="margin-top:0">Add / Edit Candidate</h2>
+
+        <form id="candidateForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Full name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="email@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" placeholder="+91 98765 43210" required>
+            </div>
+
+            <div class="field">
+              <div style="height:100%; display:flex; align-items:flex-end; justify-content:flex-start;">
+                <input type="hidden" id="candidateId">
+                <div class="form-actions">
+                  <button class="btn btn-primary" id="submitBtn" type="submit">Add Candidate</button>
+                  <button class="btn btn-ghost" id="cancelBtn" type="button" style="display:none;">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <hr>
+
+        <h3 class="small text-muted">All candidates</h3>
+        <div style="overflow:auto; margin-top:12px">
+          <table class="table" id="candidateTable">
+            <thead>
+              <tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Action</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- right: resume upload -->
+      <aside class="card">
+        <h3 style="margin-top:0">Resume Upload</h3>
+        <label class="small text-muted" for="candidateSelect">Choose candidate</label>
+        <select id="candidateSelect" style="width:100%; margin-bottom:12px"></select>
+
+        <div class="file-drop">
+          <label class="small text-muted">Choose file</label>
+          <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" />
+          <div style="margin-top:10px">
+            <button id="uploadBtn" class="btn btn-primary">Upload Resume</button>
+          </div>
+        </div>
+
+        <p class="mt-6">Current resume: <a id="resumeLink" href="#" target="_blank">none</a></p>
+      </aside>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <!-- scripts (ensure correct paths relative to this HTML file) -->
+  <script src="js/api.js"></script>
+  <script src="js/candidates.js"></script>
+</body>
+</html>

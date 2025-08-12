@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Job Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">CM</div>
+        <div class="brand-info">
+          <div class="title">Candidate Manager</div>
+          <div class="subtitle">Manage candidates, jobs & applications</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Dashboard</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="jobs.html" class="active">Jobs</a>
+        <a href="applications.html">Applications</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2 style="margin-top:0">Job Management</h2>
+
+        <form id="jobForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Title" required>
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" type="text" placeholder="Location" required>
+            </div>
+            <div class="field">
+              <label for="description">Short description</label>
+              <input id="description" type="text" placeholder="Short description" required>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <input type="hidden" id="jobId" value="">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Add Job</button>
+            <button class="btn btn-ghost" id="cancelBtn" type="button" style="display:none">Cancel</button>
+          </div>
+        </form>
+
+        <hr>
+        <h3 class="small text-muted">All Jobs</h3>
+        <div style="overflow:auto; margin-top:12px">
+          <table class="table" id="jobTable">
+            <thead>
+              <tr><th>ID</th><th>Title</th><th>Location</th><th>Description</th><th>Action</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- optional sidebar -->
+      <aside class="card">
+        <h3 style="margin-top:0">Quick actions</h3>
+        <p class="text-muted">Use the form to add or edit jobs. Click a job's Edit to populate the form.</p>
+      </aside>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>
+

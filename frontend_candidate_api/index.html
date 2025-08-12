@@ -1,0 +1,87 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recruitment Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <header class="header">
+      <div class="brand">
+        <div class="logo">CM</div>
+        <div class="brand-info">
+          <div class="title">Candidate Manager</div>
+          <div class="subtitle">Manage candidates, jobs & applications</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="applications.html">Applications</a>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <h2>Welcome, Admin 👋</h2>
+      <p class="text-muted">Manage your recruitment process efficiently from one place.</p>
+
+      <div class="card-container mt-6">
+        <div class="card">
+          <h3>Candidates</h3>
+          <p class="text-muted">View and manage candidate profiles.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;">
+            <div class="count-badge" id="candidates-count">—</div>
+            <a class="btn btn-primary" href="candidates.html">Open</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Jobs</h3>
+          <p class="text-muted">Post new job openings and manage listings.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;">
+            <div class="count-badge" id="jobs-count">—</div>
+            <a class="btn btn-primary" href="jobs.html">Open</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Applications</h3>
+          <p class="text-muted">Track candidate applications for jobs.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;">
+            <div class="count-badge" id="applications-count">—</div>
+            <a class="btn btn-primary" href="applications.html">Open</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent activity card (new) -->
+      <div class="card mt-6">
+        <h3>Recent Activity</h3>
+        <div style="display:grid;grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;">
+          <div>
+            <h4 style="margin-bottom:8px">New Candidates</h4>
+            <ul id="recent-candidates-list" class="recent-list"></ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom:8px">New Jobs</h4>
+            <ul id="recent-jobs-list" class="recent-list"></ul>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- scripts: api.js must come first (contains showToast & helpers) -->
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+
